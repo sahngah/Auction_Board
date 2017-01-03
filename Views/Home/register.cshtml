@@ -1,0 +1,36 @@
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register!</h1>
+@model auctionBoard.Models.RegisterUser
+@if(ViewBag.isThere != false)
+{
+<p>@ViewBag.Error</p>
+}
+<form asp-controller="Home" asp-action="Register" method="post">
+  <div asp-validation-summary="All"></div>
+  <div class="form-group">
+    <label for="firstname">First Name:</label>
+    <input asp-for="Firstname" type="firstname" class="form-control" id="firstname" placeholder="First Name"/>
+  </div>
+  <div class="form-group">
+    <label for="lastname">Last Name:</label>
+    <input asp-for="Lastname"type="lastname" class="form-control" id="lastname" placeholder="Last Name">
+  </div>
+   <div class="form-group">
+    <label for="username">Username:</label>
+    <input asp-for="Username" type="text" class="form-control" id="username" placeholder="Username">
+  </div>
+   <div class="form-group">
+    <label for="password">Password:</label>
+    <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Password">
+  </div>
+   <div class="form-group">
+    <label for="passwordconf">Password Confirmation:</label>
+    <input asp-for="Passwordconfirmation" type="password" class="form-control" id="passwordconf" placeholder="Password Confirmation">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+<h1>Want to Go Back To Login Page?</h1>
+<a href="/">Click Here to Go Back to the Log in Page!</a>

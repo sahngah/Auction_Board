@@ -1,0 +1,31 @@
+@model auctionBoard.Models.Item
+
+<h1>New Auction</h1>
+<div align="right">
+    <a href="/">Home<a>
+    <a href="logout">Logout<a>        
+</div>
+@if(ViewBag.isThere == true)
+{
+    <p>@ViewBag.error</p>
+}
+<form asp-controller="Dashboard" asp-action="PostNew" method="post">
+  <div asp-validation-summary="All"></div>
+  <div class="form-group">
+    <label for="name">Product Name:</label>
+    <input asp-for="name" type="text" class="form-control" id="name" placeholder="Product name requires more than 3 characters!"/>
+  </div>
+  <div class="form-group">
+    <label for="description">Description:</label><br>
+    <textarea asp-for="description" class="form-control" cols="66" rows="5" placeholder="Product description requires more than 10 characters!"></textarea>
+  </div>
+   <div class="form-group">
+    <label for="startingbid">StartingBid:</label>
+    <input asp-for="startingbid" type="text" class="form-control" id="startingbid" min=0 placeholder="Starting bid should be higher than $0">
+  </div>
+   <div class="form-group">
+    <label for="endat">End Date:</label>
+    <input asp-for="endat" type="date" class="form-control" id="endat">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>

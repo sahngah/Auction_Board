@@ -1,0 +1,26 @@
+@{
+    ViewData["Title"] = "Signin!";
+}
+@model auctionBoard.Models.LoginUser
+
+<h1>Sign in for the Auction Board!</h1>
+@if(ViewBag.isThere != false)
+{
+<p>@ViewBag.Error</p>
+}
+<form asp-controller="Home" asp-action="Login" method="post" role="form">
+  <div asp-validation-summary="All"></div>
+   <div class="form-group">
+    <label for="username">Username:</label>
+    <input asp-for="Username" type="text" class="form-control" id="username" placeholder="Username">
+  </div>
+   <div class="form-group">
+    <label for="password">Password:</label>
+    <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Password">
+  </div>
+  <button type="submit" class="btn btn-default">Submit</button>
+</form>
+
+<h1>Haven't signed up yet? Sign up!</h1>
+<a href="register">Click here to sign up!</a>
+

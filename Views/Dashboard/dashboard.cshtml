@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Auction Board";
+}
+<h1>Current Auctions:</h1>
+<div align="right">
+    <h4 class="title">Hi,  @ViewBag.curUser.firstname.Remove(1).ToUpper()@ViewBag.curUser.firstname.Substring(1)! </h4>
+    <a class="title" href="logout">Logout</a href>
+</div><br>
+
+<table class="table table-hover">
+    <tr>
+        <th>Product</th>
+        <th>Seller</th>
+        <th>Top Bid</th>
+        <th>Time Remaining</th>
+        <th>Action</th>
+    </tr>
+@foreach (var item in ViewBag.items)
+{
+    <tr>
+        <td><a href="item/@item.id">@item.name</a></td>
+        <td>@item.seller.username</td>
+        <td>@item.startingbid</td>
+        <td>@((item.endat - DateTime.Now.Date).Days +1) Day(s)</td>
+        <td>delete</td>
+    </tr>
+}
+</table>
+<form action="getnew">
+    <button type="submit" class="btn btn-default">New Auction</button>
+</form>
+<div align="right">
+    <h4>Your Current Wallet: $@ViewBag.curUser.wallet</h4>
+</div>
+
