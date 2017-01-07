@@ -25,10 +25,6 @@ namespace auctionBoard.Controllers
             {
                 User RetrievedUser = _context.Users.SingleOrDefault(user => user.username == HttpContext.Session.GetString("curUserUsername"));
                 ViewBag.curUser = RetrievedUser;                
-                // List<Post> Posts = _context.Posts.Include(post => post.user).ToList();
-                // List<Comment> Comments = _context.Comments.Include(comment => comment.post).Include(comment => comment.user).ToList();
-                // ViewBag.Posts = Posts.OrderByDescending(x=> x.createdat);
-                // ViewBag.Comments = Comments;
                 if(TempData["error"] != null)
                 {
                     ViewBag.error = TempData["error"];
