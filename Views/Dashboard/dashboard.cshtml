@@ -22,7 +22,14 @@
         <td>@item.seller.username</td>
         <td>@item.startingbid</td>
         <td>@((item.endat - DateTime.Now.Date).Days +1) Day(s)</td>
-        <td>delete</td>
+        @if(item.seller.username == @ViewBag.curUser.username)
+        {
+            <td><a href="item/delete/@item.id">Delete</a></td>
+        }
+        else
+        {
+            <td></td>
+        }
     </tr>
 }
 </table>
@@ -32,4 +39,4 @@
 <div align="right">
     <h4>Your Current Wallet: $@ViewBag.curUser.wallet</h4>
 </div>
-
+ 

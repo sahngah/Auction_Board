@@ -102,6 +102,16 @@ namespace auctionBoard.Controllers
             ViewBag.isThere = false;
             return View("show");
         }
+        [HttpGet]
+        [Route("item/delete/{id}")]
+        public IActionResult Delete()
+        {
+            int id = Convert.ToInt32(this.RouteData.Values["id"]);
+            Item thisitem = _context.Items.SingleOrDefault(item => item.id == id);
+            _context.Items.Remove(thisitem);
+            _context.SaveChanges();
+            return RedirectToAction("dashboard");
+        }
         [Route("bid")]
         public IActionResult Bid(int id, int currentbid)
         {
