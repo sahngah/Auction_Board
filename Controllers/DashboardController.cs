@@ -89,16 +89,42 @@ namespace auctionBoard.Controllers
         }
         [HttpGet]
         [Route("item/{id}")]
-        public IActionResult ShowOne(){
-            Console.WriteLine("**************************************");
-            Console.WriteLine(this.RouteData.Values["id"]);
+        public IActionResult ShowOne()
+        {
             int id = Convert.ToInt32(this.RouteData.Values["id"]);
             Item thisitem = _context.Items.SingleOrDefault(item => item.id == id);
             User thisuser = _context.Users.SingleOrDefault(user => user.id == thisitem.sellerid);
             User thisbidder = _context.Users.SingleOrDefault(user => user.id == thisitem.bidderid);
             ViewBag.thisitem = thisitem;
             ViewBag.thisuser = thisuser;
-            ViewBag.thisbidder = thisbidder;            
+            ViewBag.thisbidder = thisbidder;
+            ViewBag.error = "";
+            ViewBag.isThere = false;
+            return View("show");
+        }
+        [Route("bid")]
+        public IActionResult Bid(int id, int currentbid)
+        {
+            Item thisitem = _context.Items.SingleOrDefault(item => item.id == id);
+            if(thisitem.startingbid < currentbid)
+            {
+            User RetrievedUser = _context.Users.SingleOrDefault(user => user.username == HttpContext.Session.GetString("curUserUsername"));
+            thisitem.bidderid = RetrievedUser.id;
+            thisitem.startingbid = currentbid;
+            thisitem.updatedat = DateTime.Now;
+            _context.Items.Update(thisitem);
+            RetrievedUser.wallet = RetrievedUser.wallet - currentbid;
+            _context.Users.Update(RetrievedUser);
+            _context.SaveChanges();
+            return RedirectToAction("dashboard");
+            }
+            User thisuser = _context.Users.SingleOrDefault(user => user.id == thisitem.sellerid);
+            User thisbidder = _context.Users.SingleOrDefault(user => user.id == thisitem.bidderid);
+            ViewBag.thisitem = thisitem;
+            ViewBag.thisuser = thisuser;
+            ViewBag.thisbidder = thisbidder;
+            ViewBag.error = "Your Bid Should Be Higher Than The Current Bid!";
+            ViewBag.isThere = true;
             return View("show");
         }
     }

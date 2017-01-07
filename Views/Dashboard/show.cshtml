@@ -9,9 +9,14 @@
 <h4>Current Highest Bid: By @ViewBag.thisbidder.username</h4>
 <h3>$@ViewBag.thisitem.startingbid</h3>
 <hr>
-<form class="form-inline" asp-action="" method="post">
+@if(ViewBag.isThere == true)
+{
+    <p>@ViewBag.error</p>
+}
+<form class="form-inline" asp-action="bid" method="post">
     <div class="form-group">
     <label for="currentbid">Your Bid (Must Be Higher Than the Current Bid):</label>
+    <input type="hidden" id="id" name="id" value="@ViewBag.thisitem.id">
     <input class="form-control" id="currentbid" placeholder="Current Bid" type="text" name="currentbid"></div>
     <button type="submit" class="btn btn-default">Place the Bid</button>
 </form>
