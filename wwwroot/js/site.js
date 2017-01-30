@@ -1,1 +1,37 @@
 // Write your Javascript code.
+$(document).ready(function(){
+    $('.carousel2').hide();
+    $('.carousel3').hide();
+    $('.carousel1').click(function(){
+        $('.carousel1').hide(),
+        $('.carousel2').show(),
+        $('.carousel3').hide()
+    })
+    $('.carousel2').click(function(){
+        $('.carousel1').hide(),
+        $('.carousel2').hide(),
+        $('.carousel3').show()
+    })
+    $('.carousel3').click(function(){
+        $('.carousel1').show(),
+        $('.carousel2').hide(),
+        $('.carousel3').hide()
+    })
+    $('#showbox_creator').hide();
+    $('#showbox_price').hide();
+    $('#showbutton_creator').click(function(){
+        $('#showbox_creator').show(),
+        $('#showbox_description').hide(),
+        $('#showbox_price').hide();
+    })
+    $('#showbutton_description').click(function(){
+        $('#showbox_description').show(),
+        $('#showbox_creator').hide(),
+        $('#showbox_price').hide();
+    })
+    $('#showbutton_price').click(function(){
+        $('#showbox_price').show(),
+        $('#showbox_description').hide(),
+        $('#showbox_creator').hide();
+    })
+})

@@ -1,10 +1,6 @@
 @model auctionBoard.Models.Item
-
-<h1>New Auction</h1>
-<div align="right">
-    <a href="/">Home<a>
-    <a href="logout">Logout<a>        
-</div>
+<header align="center">Auction Board</header><hr>
+<h1 class="frontpage_description">New Auction</h1>
 @if(ViewBag.isThere == true)
 {
     <p>@ViewBag.error</p>
@@ -29,3 +25,8 @@
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
 </form>
+<hr>
+<div align="center">
+    <a href="/">Home<a>
+    <a href="logout">Logout<a>        
+</div>

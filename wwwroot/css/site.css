@@ -1,3 +1,145 @@
-.title{
-    display:inline;
+/*front page*/
+
+header{
+    font-size:50px;
+    font-family: 'Fugaz One', cursive;
+    padding:10px;
+}
+        .frontpage_bodyone{
+            display:inline-block;
+            width:63%;
+            vertical-align: top;
+        }
+        .frontpage_bodytwo{
+            display:inline-block;
+            width:35%;
+            border-left: dashed 1px black;
+            padding-left:15px;
+        }
+        .frontpage_description{
+            font-family: 'Julius Sans One', sans-serif;
+            font-size:35px;
+        }
+        .frontpage_title, #frontpage_testimonials{
+            font-family: 'Julius Sans One', sans-serif;
+        }
+.carousel_box{
+    width:60%;
+    margin:1em;
+    position:relative;
+    border:1px dotted #666;
+    border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+    overflow:hidden;
+    display:inline-block;
+    margin-top:6%;
+}
+        .carousel_content li{
+            font-size:28px;
+            width:99%;
+            list-style:none;
+            text-align: center;
+            font-family: 'Fugaz One', cursive;
+        }
+.quotes{
+    display:inline-block;
+    font-size:80px;
+    vertical-align: top;
+    font-family: 'Bungee Shade', cursive;
+}
+.testimonial_user{
+    font-family: 'Fugaz One', cursive;
+    font-size:40px;
+}
+
+/*show page*/
+#showbutton_description, #showbutton_creator, #showbutton_price{
+    background-color:lightgrey;
+    border-bottom: none;
+    padding-right:15px;
+    padding-left:10px;
+    border-top-right-radius: 2em;
+    border-color:black;
+    font-family: 'Questrial', sans-serif;
+    margin-right:-10px;
+}
+#showbox_description, #showbox_creator, #showbox_price{
+    padding:50px;
+    border: black solid 3px;
+    font-size:25px;
+}
+
+.showpage_title{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size:40px;
+}
+.showpage_body1{
+    display:inline-block;
+    width:40%;
+    vertical-align: top;
+   
+}
+.showpage_body2{
+    display:inline-block;
+    width:40%;
+    vertical-align: top;
+}
+@media only screen and (max-width : 415px) {
+.frontpage_bodyone{
+    width:99%;
+    display:block;
+}
+.frontpage_bodytwo{
+    width:99%;
+    display:black;
+    border-left:none;
+    margin-left:-10px;
+}
+.showpage_body1{
+    display:block;
+    width:99%;
+}
+.showpage_body2{
+    display:block;
+    width:99%;
+}
+.dashboard_welcome, .dashboard_wallet{
+    font-size:20px;
+}
+.quotes{
+    font-size:25px;
+}
+.testimonial_user{
+    font-size:30px;
+}
+.carousel_box{
+    width:80%;
+    position:relative;
+    border:1px dotted #666;
+    border-radius: 30px;
+	-webkit-border-radius: 30px;
+	-moz-border-radius: 30px;
+    overflow:hidden;
+    display:inline-block;
+    margin-top:6%;
+}
+        .carousel_content li{
+            font-size:28px;
+            list-style:none;
+            font-family: 'Fugaz One', cursive;
+            margin-left:-40px;
+        }
+ .frontpage_description{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size:25px;
+}
+.frontpage_title, #frontpage_testimonials{
+    font-family: 'Julius Sans One', sans-serif;
+    font-size:25px;
+}
+header{
+    font-size:40px;
+    font-family: 'Fugaz One', cursive;
+}
 }

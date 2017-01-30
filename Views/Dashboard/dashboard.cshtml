@@ -1,10 +1,10 @@
 @{
     ViewData["Title"] = "Auction Board";
 }
-<h1>Current Auctions:</h1>
+<header align="center">Auction Board</header><hr>
+<h1 class="frontpage_description">Current Auctions:</h1>
 <div align="right">
-    <h4 class="title">Hi,  @ViewBag.curUser.firstname.Remove(1).ToUpper()@ViewBag.curUser.firstname.Substring(1)! </h4>
-    <a class="title" href="logout">Logout</a href>
+    <h3 class="dashboard_welcome">Hi,  @ViewBag.curUser.firstname.Remove(1).ToUpper()@ViewBag.curUser.firstname.Substring(1)! </h3>
 </div><br>
 
 <table class="table table-hover">
@@ -17,6 +17,8 @@
     </tr>
 @foreach (var item in ViewBag.items)
 {
+    @if((item.endat - DateTime.Now.Date).Days+1 != 0)
+    {
     <tr>
         <td><a href="item/@item.id">@item.name</a></td>
         <td>@item.seller.username</td>
@@ -31,12 +33,16 @@
             <td></td>
         }
     </tr>
+    }
 }
 </table>
 <form action="getnew">
     <button type="submit" class="btn btn-default">New Auction</button>
 </form>
 <div align="right">
-    <h4>Your Current Wallet: $@ViewBag.curUser.wallet</h4>
+    <h3 class="dashboard_wallet">Your Current Wallet: $@ViewBag.curUser.wallet</h3>
 </div>
- 
+<hr>
+<div align="center">
+    <a href="logout">Logout<a>        
+</div>

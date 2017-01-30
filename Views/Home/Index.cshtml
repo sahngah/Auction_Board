@@ -2,25 +2,41 @@
     ViewData["Title"] = "Signin!";
 }
 @model auctionBoard.Models.LoginUser
-
-<h1>Sign in for the Auction Board!</h1>
-@if(ViewBag.isThere != false)
-{
-<p>@ViewBag.Error</p>
-}
-<form asp-controller="Home" asp-action="Login" method="post" role="form">
-  <div asp-validation-summary="All"></div>
-   <div class="form-group">
-    <label for="username">Username:</label>
-    <input asp-for="Username" type="text" class="form-control" id="username" placeholder="Username">
+<header align="center">Auction Board</header><hr>
+<div class="frontpage_bodyone">
+  <h3 class="frontpage_description">Have something to sell? <br><small>Sell you item on Auction Board, and people will fight for your item by bidding higher higher!</small></h3>
+</div>
+<div class="frontpage_bodytwo">
+  <h1 class="frontpage_title">Sign in</h1>
+  @if(ViewBag.isThere != false)
+  {
+  <p>@ViewBag.Error</p>
+  }
+  <form asp-controller="Home" asp-action="Login" method="post" role="form">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+      <label for="username">Username:</label>
+      <input asp-for="Username" type="text" class="form-control" id="username" placeholder="Username">
+    </div>
+    <div class="form-group">
+      <label for="password">Password:</label>
+      <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Password">
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+  </form><br>
+  <a href="register">Click here to sign up!</a>
+</div><hr>
+<h1 id="frontpage_testimonials">Testimonials <small>(Click To See Next Testimonials)<small>: </h1>
+<div align="center">
+  <h1 class='quotes'>"</h1>
+  <div class="carousel_box">
+    <ul class="carousel_content">
+      <li class="carousel1"><span class="testimonial_user">Simon</span>: "This website changed my life!!"</li>
+      <li class="carousel2"><span class="testimonial_user">Sahngah</span>: "Definitely recommend this website!"</li>
+      <li class="carousel3"><span class="testimonial_user">Sarah</span>: "I love auction board!"</li>
+    </ul>
   </div>
-   <div class="form-group">
-    <label for="password">Password:</label>
-    <input asp-for="Password" type="password" class="form-control" id="password" placeholder="Password">
-  </div>
-  <button type="submit" class="btn btn-default">Submit</button>
-</form>
+  <h1 class='quotes'>"</h1>
+</div>
 
-<h1>Haven't signed up yet? Sign up!</h1>
-<a href="register">Click here to sign up!</a>
 

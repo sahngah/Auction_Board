@@ -25,7 +25,7 @@ namespace auctionBoard.Controllers
             if(HttpContext.Session.GetString("curUserUsername") != null)
             {
                 return RedirectToAction("Dashboard", "Dashboard");
-            }
+            } 
             @ViewBag.Error = "";
             @ViewBag.isThere = false;
             return View();

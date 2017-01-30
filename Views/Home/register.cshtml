@@ -1,8 +1,8 @@
 @{
     ViewData["Title"] = "Register";
 }
-
-<h1>Register!</h1>
+<header align="center">Auction Board</header><hr>
+<h1 class="frontpage_title">Register!</h1>
 @model auctionBoard.Models.RegisterUser
 @if(ViewBag.isThere != false)
 {
@@ -31,6 +31,7 @@
     <input asp-for="Passwordconfirmation" type="password" class="form-control" id="passwordconf" placeholder="Password Confirmation">
   </div>
   <button type="submit" class="btn btn-default">Submit</button>
-</form>
-<h1>Want to Go Back To Login Page?</h1>
-<a href="/">Click Here to Go Back to the Log in Page!</a>
+</form><hr>
+<div align="center">
+  <a href="/">Home</a>
+</div>

@@ -1,22 +1,31 @@
-<h1>@ViewBag.thisitem.name</h1>
-<h3 class="title">Created by: @ViewBag.thisuser.username</h3>
-<div align="right">
+<header align="center">Auction Board</header><hr>
+<div align="center">
+    <div class="showpage_body1">
+        <h1 class="showpage_title"><b>@ViewBag.thisitem.name</b></h1><br>
+        <h4 class="showpage_description">Time Remaining: @((@ViewBag.thisitem.endat - DateTime.Now.Date).Days +1) Days</h4>
+        <h4 class="showpage_description">Current Highest Bid: $@ViewBag.thisitem.startingbid</h4>
+    </div>
+    <div class="showpage_body2">
+        <button id="showbutton_description">Description</button>
+        <button id="showbutton_creator">Creator</button>
+        <button id="showbutton_price">Current Highest Bid</button>
+        <p id="showbox_description">@ViewBag.thisitem.description</p>
+        <p id="showbox_creator">@ViewBag.thisuser.username</p>
+        <p id="showbox_price">$@ViewBag.thisitem.startingbid By @ViewBag.thisbidder.username</p>
+    </div>    
+        <hr>
+            @if(ViewBag.isThere == true)
+            {
+                <p>@ViewBag.error</p>
+            }
+            <form class="form-inline" asp-action="bid" method="post">
+                <div class="form-group">
+                <label for="currentbid">Your Bid (Must Be Higher Than the Current Bid):</label>
+                <input type="hidden" id="id" name="id" value="@ViewBag.thisitem.id">
+                <input class="form-control" id="currentbid" placeholder="Current Bid" type="text" name="currentbid"></div>
+                <button type="submit" class="btn btn-default">Place the Bid</button>
+            </form>
+    <hr>
     <a href="/">Home<a>
-    <a href="logout">Logout</a>        
+    <a href="/logout">Logout<a>        
 </div>
-<h4>Time Remaining: @((@ViewBag.thisitem.endat - DateTime.Now.Date).Days +1) Days</h4>
-<p>@ViewBag.thisitem.description</p>
-<h4>Current Highest Bid: By @ViewBag.thisbidder.username</h4>
-<h3>$@ViewBag.thisitem.startingbid</h3>
-<hr>
-@if(ViewBag.isThere == true)
-{
-    <p>@ViewBag.error</p>
-}
-<form class="form-inline" asp-action="bid" method="post">
-    <div class="form-group">
-    <label for="currentbid">Your Bid (Must Be Higher Than the Current Bid):</label>
-    <input type="hidden" id="id" name="id" value="@ViewBag.thisitem.id">
-    <input class="form-control" id="currentbid" placeholder="Current Bid" type="text" name="currentbid"></div>
-    <button type="submit" class="btn btn-default">Place the Bid</button>
-</form>
