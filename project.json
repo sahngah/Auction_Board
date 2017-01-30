@@ -12,13 +12,25 @@
     "Microsoft.Extensions.Logging.Console": "1.0.0",
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "MySql.Data.EntityFrameworkCore": "7.0.5-ir21",
-    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0"
+    "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
+    "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0"
   },
-
+  "tools": {
+      "Microsoft.AspNetCore.Server.IISIntegration.Tools": "1.0.0-preview2-final"
+  },
   "frameworks": {
     "netcoreapp1.0": {}
   },
-
+  "publishOptions": {
+    "include": [
+        "Content",
+        "Views",
+        "web.config"
+    ]
+  },
+  "scripts": {
+    "postpublish": "dotnet publish-iis --publish-folder %publish:OutputPath% --framework %publish:FullTargetFramework%"
+  },
   "buildOptions": {
     "emitEntryPoint": true,
     "preserveCompilationContext": true,

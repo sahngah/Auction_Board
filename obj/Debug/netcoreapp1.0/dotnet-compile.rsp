@@ -34,6 +34,7 @@
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Http.Abstractions/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Http.Abstractions.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Http.Extensions/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Http.Extensions.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Http.Features/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Http.Features.dll
+--reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.HttpOverrides/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.HttpOverrides.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Identity/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Identity.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Identity.EntityFrameworkCore/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.JsonPatch/1.0.0/lib/netstandard1.1/Microsoft.AspNetCore.JsonPatch.dll
@@ -54,6 +55,7 @@
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Razor.Runtime/1.0.0/lib/netstandard1.5/Microsoft.AspNetCore.Razor.Runtime.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Routing/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Routing.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Routing.Abstractions/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Routing.Abstractions.dll
+--reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Server.IISIntegration/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Server.IISIntegration.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Server.Kestrel/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Server.Kestrel.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.Session/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.Session.dll
 --reference:/Users/sahngahlee/.nuget/packages/Microsoft.AspNetCore.StaticFiles/1.0.0/lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll

@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0/",
-    "signature": "a3182199376a781f57f5c0e940daadc6de048f00"
+    "signature": "43abf6e4543ee2d203b3d3ce2fdc7c88d57986c9"
   },
   "compilationOptions": {
     "defines": [
@@ -26,7 +26,8 @@
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "MySql.Data.EntityFrameworkCore": "7.0.5-ir21",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
+          "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0"
         },
         "compile": {
           "auctionBoard.dll": {}
@@ -307,6 +308,16 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.Http.Features.dll": {}
         }
       },
+      "Microsoft.AspNetCore.HttpOverrides/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Options": "1.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.HttpOverrides.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Identity/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
@@ -562,6 +573,20 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.AspNetCore.Routing.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Server.IISIntegration/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
+          "Microsoft.AspNetCore.Http": "1.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+          "Microsoft.AspNetCore.HttpOverrides": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Options": "1.0.0",
+          "System.Security.Principal.Windows": "4.0.0"
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Server.IISIntegration.dll": {}
         }
       },
       "Microsoft.AspNetCore.Server.Kestrel/1.0.0": {
@@ -2854,7 +2879,8 @@
           "Microsoft.Extensions.Logging.Console": "1.0.0",
           "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
           "MySql.Data.EntityFrameworkCore": "7.0.5-ir21",
-          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0"
+          "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "1.0.0",
+          "Microsoft.AspNetCore.Server.IISIntegration": "1.0.0"
         },
         "runtime": {
           "auctionBoard.dll": {}
@@ -3135,6 +3161,16 @@
           "lib/netstandard1.3/Microsoft.AspNetCore.Http.Features.dll": {}
         }
       },
+      "Microsoft.AspNetCore.HttpOverrides/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Options": "1.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.HttpOverrides.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Identity/1.0.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Authentication.Cookies": "1.0.0",
@@ -3390,6 +3426,20 @@
         },
         "runtime": {
           "lib/netstandard1.3/Microsoft.AspNetCore.Routing.Abstractions.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.Server.IISIntegration/1.0.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "1.0.0",
+          "Microsoft.AspNetCore.Http": "1.0.0",
+          "Microsoft.AspNetCore.Http.Extensions": "1.0.0",
+          "Microsoft.AspNetCore.HttpOverrides": "1.0.0",
+          "Microsoft.Extensions.Logging.Abstractions": "1.0.0",
+          "Microsoft.Extensions.Options": "1.0.0",
+          "System.Security.Principal.Windows": "4.0.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.Server.IISIntegration.dll": {}
         }
       },
       "Microsoft.AspNetCore.Server.Kestrel/1.0.0": {
@@ -5662,6 +5712,11 @@
       "serviceable": true,
       "sha512": "sha512-6x7zgfbTo1gL9xMEb7EMO2ES/48bqwnWyfH09z+ubWhnzxdhHls8rtqstPylu5FPD9nid6Vo2pgDm5vufRAy5Q=="
     },
+    "Microsoft.AspNetCore.HttpOverrides/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-gHpdaaAzhaTWJZuJVo3ler2zzdQWrm8wnsoSjcNtoZZdTOkwImndRwK8o4GYoM18dfmfNheM7i4EENI7XHM/lA=="
+    },
     "Microsoft.AspNetCore.Identity/1.0.0": {
       "type": "package",
       "serviceable": true,
@@ -5761,6 +5816,11 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-Ne5CFiD1xCGSHrGICw7PsVnj7gijfkMfsw52AO6ingcUhE01dc87cJPpfGLnY22MIvqn11ECLbNZYmzFp/Rs+A=="
+    },
+    "Microsoft.AspNetCore.Server.IISIntegration/1.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xmn6EivvL4Ymo7LP+Jc49WLcIiYsUiujZo0loEbAg473nY2dIHxcxncpFAKzPf/MzqN0qBtaXEP0igYJ813H3Q=="
     },
     "Microsoft.AspNetCore.Server.Kestrel/1.0.0": {
       "type": "package",
